@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <solid android:color="#FFFFFF"/> <!-- Setting the fill color of the box -->
+    <corners android:radius="4dp"/> <!-- Setting the corner radius of the box -->
+    <stroke android:color="#000000" android:width="1dp"/> <!-- Setting the border color and width of the box -->
+</shape>

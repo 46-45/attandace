@@ -43,7 +43,7 @@ class LoginActivity : AppCompatActivity() {
         val password: EditText = findViewById(R.id.editText_password_login)
 
         if (email.text.isEmpty() || password.text.isEmpty()){
-            Toast.makeText(this, "Input data", Toast.LENGTH_SHORT)
+            Toast.makeText(this, "Masukkan Email atau Password", Toast.LENGTH_SHORT)
                 .show()
             return
         }
@@ -66,7 +66,7 @@ class LoginActivity : AppCompatActivity() {
                 } else {
                     // If sign in fails, display a message to the user.
 
-                    Toast.makeText(baseContext, "Authentication failed.",
+                    Toast.makeText(baseContext, "Email atau Password Salah!",
                         Toast.LENGTH_SHORT).show()
                 }
             }

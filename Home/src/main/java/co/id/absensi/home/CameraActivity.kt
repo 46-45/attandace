@@ -2,6 +2,7 @@ package co.id.absensi.home
 
 import android.Manifest
 import android.app.Activity
+import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.Bitmap
@@ -94,8 +95,13 @@ class CameraActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if (resultCode == Activity.RESULT_OK && requestCode == REQUEST_CODE && data != null){
             logo.setImageBitmap(data.extras?.get("data") as Bitmap)
-            openMap()
+            absensi(this)
         }
+    }
+
+    private fun absensi(context: Context) {
+        val intent = Intent(context, AbsenActivity::class.java)
+        context.startActivity(intent)
     }
 
     private fun getCurrentLocation() {
@@ -121,6 +127,8 @@ class CameraActivity : AppCompatActivity() {
                     Toast.LENGTH_SHORT).show()
             }
     }
+
+
     private fun openMap() {
         val uri = Uri.parse("geo:${latitude},${longitude}")
         val mapIntent = Intent(Intent.ACTION_VIEW, uri)
